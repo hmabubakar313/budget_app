@@ -10,15 +10,16 @@ class Project(models.Model):
         self.slug = slugify(self.name)
         super(Project,self).save(*args,**kwargs)
 
+
 class Category(models.Model):
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
 
 
 
-class Expenses(models.Model):
+class Expense(models.Model):
     project = models.ForeignKey(Project,on_delete=models.CASCADE,related_name='expenses')
     title = models.CharField(max_length=100)
-    ammount = models.DecimalField(max_digits=10,decimal_places=2)
+    amount = models.DecimalField(max_digits=10,decimal_places=2)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
  
