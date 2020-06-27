@@ -1,10 +1,11 @@
 (function(){
 
     document.querySelector('#categoryInput').addEventListener('keydown',function(e){
-        if(e.keycode !=13)
+        if(e.keyCode !=13)
         {
             return;
         }
+
         e.preventDefault()
 
         var categoryName = this.value
@@ -23,4 +24,34 @@
     </li>`)
     }
 
+
 })()
+
+
+function fetchCategoryArray()
+{
+    var categories = []
+    document.querySelectorAll('.category').forEach(function(e)
+    {
+        e.querySelector('.name').innerHTML
+        if (name == '')
+        {
+            return;
+        }
+        categories.push(name)
+    })
+    return categories
+}
+
+
+function updateCategoriesString()
+{
+    categories = fetchCategoryArray()
+    document.querySelector('input[name="categoriesString"]').value = categories.join(',')
+}
+
+function removeCategory(e)
+{
+    e.parentElement.remove()
+    updateCategoriesString()
+}
