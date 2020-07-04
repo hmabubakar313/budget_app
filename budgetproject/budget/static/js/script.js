@@ -14,7 +14,7 @@
         updateCategoriesString()
     })
 
-    function addNewCategory(name)
+    function addNewCategory(name)   
     {
 
         document.querySelector('#categoriesContainer').insertAdjacentHTML('beforeend',
