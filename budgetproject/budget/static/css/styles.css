@@ -64,6 +64,10 @@ form ul li.category
 {
     background-color: #f2f2f2;
 }
+.section-expenses .close-icon:hover
+{
+    cursor: pointer;
+}
 @media(max-width:992px)
 {
     .section-stats h1
